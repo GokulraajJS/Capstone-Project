@@ -15,8 +15,7 @@ pipeline {
         }
         stage('Deploying the docker image to dockerhub') {
             steps {
-                sh 'cd build'
-                sh './deploy.sh'
+                sh './build/deploy.sh'
             }
         }
     }
