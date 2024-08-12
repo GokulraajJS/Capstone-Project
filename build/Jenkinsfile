@@ -8,24 +8,12 @@ pipeline {
                 sh 'chmod +x build/deploy.sh'
             }
         }
-    }
-}
-pipeline {
-    agent any
-
-    stages {
         stage('Building the docker image') {
             steps {
                 sh 'cd build/'
                 sh './build.sh'
             }
         }
-    }
-}
-pipeline {
-    agent any
-
-    stages {
         stage('Deploying the docker image to dockerhub') {
             steps {
                 sh 'cd build/'
