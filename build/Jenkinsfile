@@ -10,13 +10,12 @@ pipeline {
         }
         stage('Building the docker image') {
             steps {
-                sh 'cd build/'
-                sh './build.sh'
+                sh './build/build.sh'
             }
         }
         stage('Deploying the docker image to dockerhub') {
             steps {
-                sh 'cd build/'
+                sh 'cd build'
                 sh './deploy.sh'
             }
         }
