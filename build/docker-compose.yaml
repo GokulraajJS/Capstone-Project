@@ -1,0 +1,7 @@
+version: '3.8'
+services:
+  nginx:
+    image: capimg
+    container_name: reactjs_app_capstone
+    ports:
+      - "80:80"

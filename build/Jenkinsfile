@@ -1,0 +1,22 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Giving the Permissions') {
+            steps {
+                sh 'chmod +x build/build.sh'
+                sh 'chmod +x build/deploy.sh'
+            }
+        }
+        stage('Building the docker image') {
+            steps {
+                sh './build/build.sh'
+            }
+        }
+        stage('Deploying the docker image to dockerhub') {
+            steps {
+                sh './build/deploy.sh'
+            }
+        }
+    }
+}
